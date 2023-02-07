@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.camera.CameraFragment">
+
+    <ImageView
+        android:id="@+id/img_camera"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_capture"
+        tools:src="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btn_capture"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:text="Capture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/effect_line"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_camera">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:text="Gray" />
+
+            <Button
+                android:id="@+id/btn_bright"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:text="Bright" />
+
+            <Button
+                android:id="@+id/btn_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:text="Dark" />
+
+            <Button
+                android:id="@+id/btn_gamma"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:text="Gamma" />
+
+            <Button
+                android:id="@+id/btn_green"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:text="Green" />
+
+            <Button
+                android:id="@+id/btn_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:text="Blue" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/btn_publish"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:text="Publish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/btn_publish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/effect_line" />
+</androidx.constraintlayout.widget.ConstraintLayout>
