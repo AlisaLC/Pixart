@@ -17,6 +17,9 @@ import androidx.navigation.Navigation;
 
 import ir.webkhoon.pixart.databinding.FragmentMainBinding;
 import ir.webkhoon.pixart.model.Setting;
+import ir.webkhoon.pixart.model.room.AppDatabase;
+import ir.webkhoon.pixart.model.room.UserDao;
+import ir.webkhoon.pixart.model.room.UserEntity;
 
 public class MainFragment extends Fragment {
 
@@ -33,8 +36,9 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding = FragmentMainBinding.bind(view);
-        binding.mainLoginButton.setOnClickListener(
-                v -> Navigation.findNavController(v).navigate(R.id.loginFragment));
+        binding.mainLoginButton.setOnClickListener(v -> {
+            Navigation.findNavController(view).navigate(R.id.loginFragment);
+        });
         binding.mainRegisterButton.setOnClickListener
                 (v -> Navigation.findNavController(v).navigate(R.id.registerFragment));
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);

@@ -16,4 +16,30 @@
             android:id="@+id/action_mainFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ir.webkhoon.pixart.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <argument
+            android:name="user_id"
+            android:defaultValue="0L"
+            app:argType="long" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="ir.webkhoon.pixart.ui.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/landingFragment"
+        android:name="ir.webkhoon.pixart.ui.landing.LandingFragment"
+        android:label="LandingFragment"
+        tools:layout="@layout/activity_landing">
+        <action
+            android:id="@+id/action_landingFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

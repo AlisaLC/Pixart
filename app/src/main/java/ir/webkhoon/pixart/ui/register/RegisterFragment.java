@@ -15,6 +15,13 @@ import com.google.android.material.snackbar.Snackbar;
 
 import ir.webkhoon.pixart.R;
 import ir.webkhoon.pixart.databinding.FragmentRegisterBinding;
+import ir.webkhoon.pixart.model.room.AppDatabase;
+import ir.webkhoon.pixart.model.room.ProfileDao;
+import ir.webkhoon.pixart.model.room.ProfileEntity;
+import ir.webkhoon.pixart.model.room.SettingDao;
+import ir.webkhoon.pixart.model.room.SettingEntity;
+import ir.webkhoon.pixart.model.room.UserDao;
+import ir.webkhoon.pixart.model.room.UserEntity;
 
 public class RegisterFragment extends Fragment {
 

@@ -23,43 +23,5 @@
         android:label="@string/title_camera"
         tools:layout="@layout/fragment_camera" />
 
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="ir.webkhoon.pixart.ui.login.LoginFragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login">
-        <argument
-            android:name="user_id"
-            android:defaultValue="0L"
-            app:argType="long" />
-
-    </fragment>
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="ir.webkhoon.pixart.ui.register.RegisterFragment"
-        android:label="RegisterFragment"
-        tools:layout="@layout/fragment_register" />
-
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="ir.webkhoon.pixart.MainFragment"
-        android:label="MainFragment"
-        tools:layout="@layout/fragment_main">
-        <action
-            android:id="@+id/action_mainFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/landingFragment"
-        android:name="ir.webkhoon.pixart.ui.landing.LandingFragment"
-        android:label="LandingFragment"
-        tools:layout="@layout/fragment_landing">
-        <action
-            android:id="@+id/action_landingFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
 
 </navigation>

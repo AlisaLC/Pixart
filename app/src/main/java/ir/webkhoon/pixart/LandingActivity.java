@@ -2,31 +2,29 @@ package ir.webkhoon.pixart;
 
 import android.os.Bundle;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import ir.webkhoon.pixart.databinding.ActivityMainBinding;
-import ir.webkhoon.pixart.model.User;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+import ir.webkhoon.pixart.databinding.ActivityLandingBinding;
 
-    private ActivityMainBinding binding;
+
+public class LandingActivity extends AppCompatActivity {
+
+    private ActivityLandingBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityLandingBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        User.currentUser = new User("kimkardashian", "1234");
-        User.currentUser.description = "tired";
 
-        /*BottomNavigationView navView = findViewById(R.id.nav_view);
+        BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -34,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding., navController);*/
-    }
+        NavigationUI.setupWithNavController(binding.navView, navController);
 
+    }
 }
+

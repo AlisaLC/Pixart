@@ -4,6 +4,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 import static ir.webkhoon.pixart.model.Setting.SHARED_PREFS;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,8 +18,12 @@ import androidx.navigation.Navigation;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import ir.webkhoon.pixart.LandingActivity;
 import ir.webkhoon.pixart.R;
 import ir.webkhoon.pixart.databinding.FragmentLoginBinding;
+import ir.webkhoon.pixart.model.room.AppDatabase;
+import ir.webkhoon.pixart.model.room.UserDao;
+import ir.webkhoon.pixart.model.room.UserEntity;
 
 public class LoginFragment extends Fragment {
 
@@ -49,10 +54,10 @@ public class LoginFragment extends Fragment {
             edit.apply();
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", user.user_id);
-            Navigation.findNavController(v).navigate(R.id., bundle);
+            Navigation.findNavController(v).navigate(R.id.landingFragment, bundle);
         });
         if (getArguments().getLong("user_id") != 0L) {
-            Navigation.findNavController(view).navigate(R.id.landingFragment, getArguments());
+            startActivity(new Intent(getContext(), LandingActivity.class));
         }
     }
 
